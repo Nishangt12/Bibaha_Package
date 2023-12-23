@@ -1,4 +1,4 @@
-const Product = require('../models/productModel');
+const Rent = require('../models/rentModel');
 const ErrorHandler = require('../utils/errorhandler');
 const catchAsyncErrors = require('../middleware/catchAsyncError');
 const ApiFeatures = require('../utils/apifeatures');
@@ -13,8 +13,8 @@ const getDataUri = (file) => {
   return uri;
 };
 
-// create Product -- Admin
-exports.createProduct = catchAsyncErrors(async (req, res, next) => {
+// create Rent product -- Admin
+exports.createRentProduct = catchAsyncErrors(async (req, res, next) => {
   let images = req.files;
   console.log(images);
   //const imageData = getDataUri(image);
@@ -36,77 +36,78 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
   req.body.images = imagesLinks;
   req.body.user = req.user.id;
 
-  const product = await Product.create(req.body);
+  const rentProduct = await Rent.create(req.body);
   res.status(201).json({
     success: true,
-    product,
+    rentProduct,
   });
 });
 
-// Get All Products --Home page
-exports.getAllProductsHome = catchAsyncErrors(async (req, res) => {
+// Get All  Rent Products --Home page
+exports.getAllRentProductsHome = catchAsyncErrors(async (req, res) => {
   const resultPerPage = 4;
-  const productsCount = await Product.countDocuments();
-  const apiFeatures = new ApiFeatures(Product.find(), req.query)
+  const rentsCount = await Rent.countDocuments();
+  const apiFeatures = new ApiFeatures(Rent.find(), req.query)
     .search()
     .filter()
     .pagination(resultPerPage);
-  const products = await apiFeatures.query;
+  const rents = await apiFeatures.query;
 
   res.status(200).json({
     success: true,
-    products,
+    rents,
     resultPerPage,
-    productsCount,
+    rentsCount,
   });
 });
 
-// Get All Products
-exports.getAllProducts = catchAsyncErrors(async (req, res) => {
-  const resultPerPage = 4;
-  const productsCount = await Product.countDocuments();
-  const apiFeatures = new ApiFeatures(Product.find(), req.query)
+// Get All  Rent Products
+exports.getAllRentProducts = catchAsyncErrors(async (req, res) => {
+  const resultPerPage = 10;
+  const rentsCount = await Rent.countDocuments();
+  const apiFeatures = new ApiFeatures(Rent.find(), req.query)
     .search()
     .filter()
     .pagination(resultPerPage);
-  const products = await apiFeatures.query;
+  const rents = await apiFeatures.query;
 
   res.status(200).json({
     success: true,
-    products,
+    rents,
     resultPerPage,
-    productsCount,
+    rentsCount,
   });
 });
 
-// Get All Products --(ADMIN)
-exports.getAdminProducts = catchAsyncErrors(async (req, res) => {
-  const products = await Product.find();
+// Get All  Rent Products --(ADMIN)
+exports.getAdminRentProducts = catchAsyncErrors(async (req, res) => {
+  const rents = await Rent.find();
   res.status(200).json({
     success: true,
-    products,
+    rents,
   });
 });
 
-// Get Product Details
-exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
-  const product = await Product.findById(req.params.id);
+// Get Rent Product Details
+exports.getRentProductDetails = catchAsyncErrors(async (req, res, next) => {
+  const rent = await Rent.findById(req.params.id);
 
-  if (!product) {
+  if (!rent) {
     return next(new ErrorHandler('Product not found', 404));
   }
 
-  return res.status(200).json({
+  res.status(200).json({
     success: true,
-    product,
+    rent,
   });
 });
 
-//update Product --Admin
+//update Rent Product --Admin
 
-exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
-  let product = await Product.findById(req.params.id);
-  if (!product) {
+exports.updateRentProduct = catchAsyncErrors(async (req, res, next) => {
+  let rent = await Rent.findById(req.params.id);
+
+  if (!rent) {
     return next(new ErrorHandler('Product not found', 404));
   }
 
@@ -121,8 +122,8 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   console.log(images);
   if (images.length > 0) {
     // Deleting Images From Cloudinary
-    for (let i = 0; i < product.images.length; i++) {
-      await cloudinary.v2.uploader.destroy(product.images[i].public_id);
+    for (let i = 0; i < rent.images.length; i++) {
+      await cloudinary.v2.uploader.destroy(rent.images[i].public_id);
     }
 
     const imagesLinks = [];
@@ -142,48 +143,26 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
     req.body.images = imagesLinks;
   }
 
-  product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+  rent = await Rent.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
     useFindAndModify: false,
   });
-
   return res.status(200).json('Updated');
 });
 
-// Delete Product
+// Delete  Rent Product
 
-exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
-  const product = await Product.findById(req.params.id);
+exports.deleteRentProduct = catchAsyncErrors(async (req, res, next) => {
+  const rent = await Rent.findById(req.params.id);
 
-  if (!product) {
+  if (!rent) {
     return next(new ErrorHandler('Product not found', 404));
   }
-
-  //Deleting images from cloudinary
-  for (let i = 0; i < product.images.length; i++) {
-    await cloudinary.v2.uploader.destroy(product.images[i].public_id);
-  }
-  await product.remove();
+  await rent.remove();
 
   res.status(200).json({
     success: true,
     message: 'Product Deleted Sucessfully',
   });
-});
-
-// get product by category
-exports.getCategoryProduct = catchAsyncErrors(async (req, res, next) => {
-  try {
-    const category = new RegExp(req.params.cat, 'i');
-    const product = await Product.find({ category: category });
-
-    if (product == null) {
-      return res.status(404).send({ message: 'Category not found' });
-    }
-
-    return res.send(product);
-  } catch (error) {
-    res.status(500).send({ message: error.message });
-  }
 });

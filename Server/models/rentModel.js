@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
+const rentSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'Please Enter product Name'],
@@ -35,10 +35,6 @@ const productSchema = new mongoose.Schema({
       },
     },
   ],
-  category: {
-    type: String,
-    required: [true, 'please Enter product category'],
-  },
   stock: {
     type: Number,
     required: [true, 'Please Enter product Stock'],
@@ -55,4 +51,4 @@ const productSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model('Rent', rentSchema);
