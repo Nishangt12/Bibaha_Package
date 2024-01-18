@@ -1,39 +1,34 @@
-const express = require('express');
+const router = require('express').Router();
 const {
-  newOrder,
-  getSingleOrder,
-  myOrders,
-  getAllOrders,
-  updateOrder,
+  createOrder,
+  singleOrder,
+  myOrder,
+  allOrders,
+  updateOrders,
   deleteOrder,
   cancelOrder,
 } = require('../controllers/orderController');
-const multer = require('multer');
 
-const upload = multer({
-  fileFilter(req, file, callback) {
-    if (!file.originalname.match(/.(jpg|jpeg|png)$/)) {
-      return;
-    }
-    callback(undefined, true);
-  },
-});
-const router = express.Router();
-const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
+const { isAuthenticatedUser, authorizeRoles } = require('../Middleware/authe');
 
-router.route('/order/new').post(isAuthenticatedUser, upload.none(), newOrder);
+router.route('/order/create').post(isAuthenticatedUser, createOrder);
 
-router.route('/order/:id').get(isAuthenticatedUser, getSingleOrder);
+router.route('/order/:id').get(isAuthenticatedUser, singleOrder);
 
-router.route('/orders/me').get(isAuthenticatedUser, myOrders);
-router.route('/order/cancel/:id').post(isAuthenticatedUser, cancelOrder);
+router.route('/orders/me').get(isAuthenticatedUser, myOrder);
+
 router
-  .route('/admin/orders')
-  .get(isAuthenticatedUser, authorizeRoles('admin'), getAllOrders);
+  .route('/admin/allorders')
+  .get(isAuthenticatedUser, authorizeRoles('admin'), allOrders);
 
 router
   .route('/admin/order/:id')
-  .put(isAuthenticatedUser, authorizeRoles('admin'), updateOrder)
+  .put(isAuthenticatedUser, authorizeRoles('admin'), updateOrders);
+
+router
+  .route('/admin/order/:id')
   .delete(isAuthenticatedUser, authorizeRoles('admin'), deleteOrder);
+
+router.route('/order/cancel/:id').post(isAuthenticatedUser, cancelOrder);
 
 module.exports = router;

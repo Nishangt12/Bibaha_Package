@@ -1,0 +1,325 @@
+.ProductDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.ProductDetails > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4vmax;
+  box-sizing: border-box;
+}
+
+.ProductDetails > div:last-child {
+  align-items: flex-start;
+}
+
+.ImageCro {
+  width: 400px;
+  height: 400px;
+  margin-left: 20%;
+  object-fit: cover;
+}
+
+.outstock {
+  color: red;
+}
+
+.lowstock {
+  color: rgb(246, 102, 102);
+}
+
+.instock {
+  color: rgb(57, 176, 57);
+}
+
+.block1 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.block1 h2 {
+  display: flex;
+
+  margin-right: 34vmax;
+  margin-bottom: 20px;
+}
+
+.block2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.block2-span {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.block3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.block31 {
+  display: flex;
+  margin-top: 10px;
+}
+
+.block31 button {
+  border: none;
+  padding: 8px 70px;
+  margin-right: 10px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  flex: 2;
+}
+
+.block31 button:last-child {
+  margin-left: 2%;
+}
+
+.block31 button:hover {
+  background-color: #0056b3;
+}
+
+.block4 {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.block4 h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.block4 p {
+  font-size: 1.2rem;
+  line-height: 0.5;
+}
+
+.delivery {
+  display: flex;
+  flex-direction: column;
+  background-color: #fcfcfc;
+  padding: 20px;
+  margin: 20px;
+}
+
+.delivery h3 {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: start;
+}
+
+.standardDelivery {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.standardDelivery p {
+  margin: 0;
+}
+
+.deliveryInfo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.deliveryType {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.deliveryTime {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.deliveryPrice {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: green;
+}
+
+.cashDelivery {
+  font-size: 16px;
+  font-weight: bold;
+  border-top: 1px solid rgb(222, 221, 221);
+  padding: 20px;
+}
+
+.reviewButton {
+  padding: 10px;
+}
+
+.Review {
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.Review:hover {
+  background-color: #0056b3;
+}
+
+.submitDialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submitDialogTextArea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 1rem 0;
+  padding: 1rem;
+  font: 300 1rem 'Roboto';
+  outline: none;
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.submitDialog button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.submitDialog button:first-child {
+  background-color: #ccc;
+  color: #333;
+}
+
+.submitDialog button:last-child {
+  background-color: #00bcd4;
+  color: #fff;
+}
+
+.Desc {
+  width: 100%;
+  height: auto;
+  border: none;
+  background-color: #fff;
+}
+
+.reviewHead {
+  color: #000000be;
+  font: 500 1.4vmax;
+  text-align: start;
+  padding: 1vmax;
+  width: 20vmax;
+  margin-bottom: 4vmax;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.noReviews {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 30px;
+  color: gray;
+}
+
+@media screen and (max-width: 600px) {
+  .ProductDetails {
+    flex-direction: column;
+    height: unset;
+  }
+  .ImageCro {
+    margin-left: -50px;
+  }
+
+  .ProductDetails > div:last-child {
+    align-items: center;
+  }
+
+  .block1 > h2 {
+    font-size: 3vmax;
+    text-align: center;
+    margin-left: 17vmax;
+  }
+
+  .block2 {
+    justify-content: center;
+  }
+  .block2 > span {
+    font-size: 2.5vmax;
+  }
+
+  .block3 > h1 {
+    font: 700 3vmax 'Franklin Gothic Medium';
+    text-align: center;
+    margin-left: 8vmax;
+  }
+
+  .block31 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .block31 > button {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .block3 > p {
+    padding: 2.5vmax 0;
+    margin-left: 0.5vmax;
+    font: 400 2vmax;
+  }
+
+  .block4 {
+    padding: 0 2vmax;
+    font: 500 2.5vmax;
+    margin-right: 11vmax;
+    margin-bottom: 5%;
+  }
+
+  .block4 > p {
+    font: 300 1.2vmax;
+  }
+
+  .Review {
+    font-size: 20px;
+    height: 6vmax;
+  }
+
+  .reviewHead {
+    font-size: 15px;
+  }
+}
