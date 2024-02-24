@@ -10,9 +10,10 @@
 .productContainer {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 5vmax;
+  padding: 0 10vmax;
   justify-content: center;
   min-height: 30vh;
+  margin-left: 4vmax;
 }
 .paginationBox {
   display: flex;

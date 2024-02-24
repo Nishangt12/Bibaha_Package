@@ -54,11 +54,14 @@ const product = require('./routes/product');
 const user = require('./routes/users');
 const category = require('./routes/categoryRoutes');
 const order = require('./routes/orderRoute');
+const invoice=require('./routes/invoiceRoute');
 
 app.use('/api/v1', product);
 app.use('/api/log', user);
 app.use('/api/v1', category);
 app.use('/api/ord', order);
+app.use('/api/inv', invoice);
+
 
 // Errors Middleware
 app.use(errorMiddleware);

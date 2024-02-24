@@ -18,6 +18,7 @@ const KhaltiPayment = ({ order, cartItems, totalPrice, user }) => {
         order.orderItems = JSON.stringify(cartItems);
         const ord = {
           ...order,
+          
 
           paymentInfo: { id: payload.idx, status: 'succeeded' },
           type: 'multipart/form-data',
@@ -44,10 +45,16 @@ const KhaltiPayment = ({ order, cartItems, totalPrice, user }) => {
           localStorage.setItem('cartItems', JSON.stringify(cartItems));
           // redirect to success page
 
+        
+          await sendInvoiceToCustomer(ord,user);        
+    
+
           window.location.href = '/order/success';
         } catch (error) {
           console.log(error);
         }
+      
+        
       },
       // onError handler is optional
       onError(error) {
@@ -61,12 +68,25 @@ const KhaltiPayment = ({ order, cartItems, totalPrice, user }) => {
     paymentPreference: ['KHALTI', 'EBANKING', 'MOBILE_BANKING'],
   };
 
+  
   // const orderInfo = JSON.parse(sessionStorage.getItem('orderInfo'));
 
   let checkout = new KhaltiCheckout(config);
   // let btn = document.getElementById('payment-button');
 
   const wholeTotal = totalPrice * 100;
+
+  const sendInvoiceToCustomer = async (ord,user, totalPrice,cartItems) => {
+    const dataToSend = { order: ord, user: user, totalPrice: totalPrice, cartItems: cartItems};
+    try {
+      // Send the order data to the server to send the invoice
+      const response = await axios.post('/api/inv/sendinvoice', dataToSend );
+      console.log('Invoice sent:', response.data);
+    } catch (error) {
+      console.error('Error sending invoice:', error);
+      // Handle errors if needed
+    }
+  };
 
   const handleCheckout = () => {
     if (user.role === 'admin') {
@@ -75,6 +95,7 @@ const KhaltiPayment = ({ order, cartItems, totalPrice, user }) => {
     }
     checkout.show({ amount: wholeTotal });
   };
+
 
   return (
     <button id="payment-button" onClick={handleCheckout}>
