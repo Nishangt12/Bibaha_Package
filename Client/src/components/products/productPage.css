@@ -13,7 +13,8 @@
   padding: 0 10vmax;
   justify-content: center;
   min-height: 30vh;
-  margin-left: 4vmax;
+  margin-left: 20vmax;
+  margin-bottom: 2vmax;
 }
 .paginationBox {
   display: flex;
@@ -71,36 +72,68 @@
   color: white;
 }
 
-.filterBox {
-  width: 10vmax;
+
+
+/* aside {
+  font-family: 'Roboto', sans-serif; 
+  width: 300px;
   position: absolute;
-  top: 10vmax;
-  left: 4vmax;
+  top: 5.5vmax;
+  left: 0;
+  padding: 20px;
+  background: #ffffff; 
+
 }
 
-.categoryfilter {
-  list-style-type: none;
-  padding: 0;
+aside a {
+  display: block;
+  padding: 15px 20px;
+  color: #333; 
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s; 
 }
 
-.category-li {
-  padding: 5px;
-  margin-bottom: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  color: #333;
+aside a:hover {
+  color: #ffffff; 
+  background-color: #3f5efb; 
+  border-radius: 5px; 
 }
 
-.category-li:hover {
-  background-color: #eaeaea;
+aside a i {
+  margin-right: 10px;
 }
 
-.category-li:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+aside p {
+  margin: 0;
+  padding: 20px 0;
+  color: #666; 
 }
 
-.category-li:active {
-  background-color: #d4d4d4;
+
+aside a:hover::after,
+aside a:hover::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2); 
 }
+
+aside a:hover::after {
+  bottom: 100%;
+  right: 0;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  box-shadow: 0 20px 0 0 #ffffff;
+}
+
+aside a:hover::before {
+  top: calc(50% - 17.5px);
+  right: 0;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  box-shadow: 0 -20px 0 0 #ffffff; 
+} */
+
+
+

@@ -1,0 +1,179 @@
+.productsHeading {
+    margin: 2vmax auto;
+    width: 15vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+    padding: 2vmax;
+    color: rgba(0, 0, 0, 0.678);
+    font: 500 1.5vmax 'Roboto';
+    text-align: center;
+  }
+  .productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10vmax;
+    justify-content: center;
+    min-height: 30vh;
+    margin-left: 10vmax;
+    margin-bottom: 10vmax;
+  }
+
+  .page-item {
+    list-style: none;
+    background-color: #f2f2f2;
+    border: 1px solid #d9d9d9;
+    padding: 1vmax 1.8vmax;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 0.5vmax;
+  }
+
+  .page-item:first-child {
+    border-radius: 5px 0 0 5px;
+  }
+  .page-item:last-child {
+    border-radius: 0 5px 5px 0;
+  }
+  .page-link {
+    text-decoration: none;
+    font: 300 0.7vmax 'Roboto';
+    color: rgb(80, 80, 80);
+    transition: all 0.3s;
+  }
+  
+  .paginationBox .page-link {
+    font-size: 1rem; /* change this to adjust the font size */
+  }
+  
+  .page-item:hover {
+    background-color: rgb(133, 124, 231);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .page-item:hover .page-link {
+    color: rgb(0, 0, 0);
+  }
+  
+  .pageItemActive {
+    background-color: rgb(153, 168, 222);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pageLinkActive {
+    color: white;
+  }
+  
+ 
+
+
+   aside {
+    font-family: 'Roboto', sans-serif; 
+    width: 300px;
+    position: absolute;
+    top: 5.5vmax;
+    left: 0;
+    padding: 20px;
+    background: #ffffff; 
+  
+  }
+  
+  aside a {
+    display: block;
+    padding: 15px 20px;
+    color: #333; 
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; 
+  }
+
+  aside a i {
+    margin-right: 10px;
+  }
+  
+  aside p {
+    margin: 0;
+    padding: 20px 0;
+    color: #666; 
+  }
+  aside a h1 {
+    margin-bottom: 10px;
+    font: 500px;
+    color: black; 
+    min-width: 200px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+  }
+  aside a ul li {
+    border: 0px solid #fff;
+       font-family: "Roboto";
+        min-width: 100px;
+        min-height: 30px;
+        position: relative;
+        cursor: pointer;
+      
+        letter-spacing: 1px;
+        position: relative;
+        transition: background-color 0.1s linear 0.1s;
+   
+  }
+  
+  aside a ul li::after {
+    content: "";
+    display: block;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
+    background: none;
+    position: absolute;
+    inset: 0;
+    transition: all 0.5s linear;
+}
+
+aside a ul li:hover::after {
+    transform: scaleX(0);
+}
+
+aside a ul li:hover {
+    background-color: orange;
+    color: #fff;
+}
+  aside a:hover::after,
+  aside a:hover::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2); 
+  }
+  
+  aside a:hover::after {
+    bottom: 100%;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    box-shadow: 0 20px 0 0 #ffffff;
+  }
+  
+  aside a:hover::before {
+    top: calc(50% - 17.5px);
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    box-shadow: 0 -20px 0 0 #ffffff; 
+  }
+  
+  
+  /*slider*/
+  /* Customize the track color */
+.MuiSlider-root {
+    color: orange; /* Change the color to your desired color */
+  }
+  
+  /* Customize the thumb color */
+  .MuiSlider-thumb {
+    color: orange; /* Change the color to your desired color */
+  }
+  
+  /* Customize the active (focused) thumb color */
+  .MuiSlider-thumb.Mui-focusVisible {
+    box-shadow: 0px 0px 0px 8px rgba(243, 140, 6, 0.16); /* Change the color to your desired color */
+  }

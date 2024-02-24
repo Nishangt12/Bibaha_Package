@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const PageNavigation = ({ title, category }) => {
+const PageNavigation = ({ title,category }) => {
+ 
   const styles = {
     wrapper: {
       height: '4rem',
@@ -14,7 +15,7 @@ const PageNavigation = ({ title, category }) => {
     },
     link: {
       fontSize: '1.2rem',
-      color: '#1a9cb7',
+      color: 'orange',
       textDecoration: 'none',
     },
   };
@@ -24,14 +25,14 @@ const PageNavigation = ({ title, category }) => {
       <NavLink to="/" style={styles.link}>
         Home&nbsp;
       </NavLink>
-      {category && (
-        <>
+    
           {' > '}
-          <NavLink to={`/category/${category}`} style={styles.link}>
-            &nbsp;{category}&nbsp;
+          <NavLink to={`/allProducts`} style={styles.link}>
+            &nbsp;Products&nbsp;
           </NavLink>
-        </>
-      )}
+      
+     
+      
       {' > '}
       {title}
     </div>
@@ -39,3 +40,4 @@ const PageNavigation = ({ title, category }) => {
 };
 
 export default PageNavigation;
+

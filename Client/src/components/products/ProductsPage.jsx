@@ -6,7 +6,7 @@ import Loader from '../mainPage/FrontFeatures/Loading/Loader';
 import Product from './Productcard.jsx';
 import Slider from '@material-ui/core/Slider';
 import Pagination from 'react-js-pagination';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
 
 export const ProductsPage = () => {
@@ -54,7 +54,7 @@ export const ProductsPage = () => {
               ))}
           </div>
 
-          <div className="filterBox">
+          {/* <div className="filterBox">
             <h3>Price</h3>
             <Slider
               value={price}
@@ -62,7 +62,7 @@ export const ProductsPage = () => {
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
               min={0}
-              max={2000}
+              max={100}
             />
             <h3>Categories</h3>
             <ul className="categoryfilter">
@@ -86,8 +86,51 @@ export const ProductsPage = () => {
               }}
               precision={0.5}
             />
-          </div>
+          </div> */}
+<aside>
+  <p></p>
+  <Link>
+  <h1>Price Range</h1>
+  <Slider
+              value={price}
+              onChange={priceHandler}
+              valueLabelDisplay="auto"
+              aria-labelledby="range-slider"
+              min={0}
+              max={100}
+              width="50px"
+              color='orange'
+            />
+    
+  </Link>
+  <Link>
+  <h1>Category</h1>
+  <ul>
+              {categories &&
+                categories.map((category) => (
+                  <li
+                    className="category-li "
+                    key={category.title}
+                    onClick={() => setCategory(category)}
+                  >
+                    {category.title}
+                  </li>
+                ))}
+            </ul>
 
+  </Link>
+  <Link>
+  <h1>Rating Above</h1>
+  <Rating
+              value={ratings}
+              onChange={(e, newRating) => {
+                setRatings(newRating);
+              }}
+              precision={0.5}
+            />
+  </Link>
+ 
+</aside>
           {resPerPage < productsCount && (
             <div className="paginationBox">
               <Pagination

@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../imgs/logo.png"
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-white shadow-md text-black mb-5 border-t-2 border-b-amber-600 ">
+    <footer aria-label="Site Footer" className="bg-white shadow-md text-black mx-5 mt-5 border-t-2 border-b-amber-600 ">
       <div className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8 text-black md:space-x-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 md:space-x-24 text-black">
           <div>
