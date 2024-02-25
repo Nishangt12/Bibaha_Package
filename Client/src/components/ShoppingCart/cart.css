@@ -179,7 +179,7 @@
   font-weight: bold;
   padding: 10px 20px;
   border: none;
-  background-color: #5175f7;
+  background-color: orange;
   color: #ffffff;
   cursor: pointer;
   border-radius: 30px;
@@ -289,8 +289,8 @@
     margin: 0;
   }
 
-  /*************************************************************product cart.js****************************************************************/
-  .bottom {
+  *************************************************************product cart.js****************************************************************
+   .bottom {
     padding: 3vmax;
     height: 25vmax;
   }
@@ -309,4 +309,4 @@
   .productPrice {
     font: 300 1.9vmax;
   }
-}
+} 

@@ -38,19 +38,7 @@ const Products = ({ product }) => {
 
   return (
     <>
-      {/* // <Link className="productCard" to={`/product/${product._id}`}>
-    //   {product.images && product.images.length > 0 ? (
-    //     <img src={product.images[0].url} alt={product.name} />
-    //   ) : (
-    //     <img src={defaultImage} alt={product.name} />
-    //   )}
-    //   <p>{product.name}</p>
-    //   <span>{`Rs. ${product.price}`}</span>
-    //   <div>
-    //     <ReactStars {...options} />{' '}
-    //     <span>&nbsp;&nbsp; {product.numofReviews} Reviews</span>
-    //   </div>
-    // </Link> */}
+   
     
 
         <div className="product-grid">

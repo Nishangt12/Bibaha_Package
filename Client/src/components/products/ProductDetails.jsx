@@ -11,10 +11,10 @@ import { useParams } from 'react-router-dom';
 import './productdetails.css';
 import ReviewSection from '../mainPage/Reviews/ReviewSection';
 import Rating from '@mui/material/Rating';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Loader from '../mainPage/FrontFeatures/Loading/Loader';
 import { useAlert } from 'react-alert';
-import PageNavigation from '../mainPage/FrontFeatures/PageNavigation/PageNavigation';
+
 import { addToCart } from '../../reduxFeature/actions/cartAction';
 import {
   Dialog,
@@ -99,11 +99,24 @@ const ProductDetails = () => {
         <Loader />
       ) : (
         <Fragment>
-          <div className="wrapper">
-            <PageNavigation category={product.category} title={product.name} />
+
+  <main>
+    <div class="card">
+      <div class="card__title">
+        <div class="icon">
+          <Link to={"/allProducts/"}><i><KeyboardBackspaceIcon/></i></Link>
+        </div>
+        <h3>{product.category}</h3>
+      </div>
+      <div class="card__body">
+        <div class="half">
+          <div class="featured_text">
+            <h1>{product.name}</h1>
+           
+            <p class="price">{`Rs ${product.price}`}</p>
           </div>
-          <div className="ProductDetails">
-            <Carousel className="Carousel">
+          <div class="image">
+          <Carousel className="Carousel">
               {product.images &&
                 product.images.map((item, i) => (
                   <img
@@ -114,77 +127,46 @@ const ProductDetails = () => {
                   />
                 ))}
             </Carousel>
-
-            <div>
-              <div className="block1">
-                <h2>{product.name}</h2>
-              </div>
-              <div className="block2">
-                <Rating {...options} />
-                <span className="block2-span">
-                  {' '}
-                  ({product.numofReviews} Reviews)
-                </span>
-              </div>
-              <div className="block3">
-                <h1>{`Rs ${product.price}`}</h1>
-                <p>{product.stock}</p>
-                <div className="block31">
-                  <button
-                    disabled={product.stock === 0} //for BUG previously this line was not here
-                    onClick={addToCartHandler}
-                  >
-                    Add to Cart
-                  </button>
-
-                  {/* for BUY NOW  */}
-                  <Link to="/cart">
-                    <button
-                      disabled={product.stock === 0}
-                      onClick={buyProductHandler}
-                    >
-                      Buy Now
-                    </button>
-                  </Link>
-                </div>
-                <p>
-                  Status:{' '}
-                  <b
+          </div>
+        </div>
+        <div class="half">
+          <div class="description">
+            <p>{product.description}.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+          <span class="stock"><i class="fa fa-pen"></i><b
                     className={
                       product.stock <= 0
                         ? 'outstock'
-                        : product.stock <= 10
+                        : product.stock <= 3
                         ? 'lowstock'
                         : 'instock'
                     }
                   >
                     {product.stock <= 0
                       ? 'OutOfStock'
-                      : product.stock <= 10
+                      : product.stock <= 3
                       ? 'Low on Stock'
                       : ' In Stock'}
-                  </b>
-                </p>
-              </div>
-              <div className="delivery">
-                <h3>Delivery</h3>
-                <div className="standardDelivery">
-                  <LocalShippingIcon />
-                  <div className="deliveryInfo">
-                    <p className="deliveryType">Standard Delivery</p>
-                    <p className="deliveryTime">1 Day</p>
-                    <p className="deliveryPrice">Rs. 50</p>
-                  </div>
-                </div>
-                <p className="cashDelivery">Cash on Delivery Available</p>
-              </div>
-            </div>
+                  </b></span>
+          <div class="reviews">
+            <ul class="stars">
+              <li><i> <Rating {...options} /></i></li>
+            </ul>
+            <span>({product.numofReviews} reviews)</span>
           </div>
-          <div className="Desc">
-            <div className="block4">
-              <h3>Description : </h3>
-              <p>{product.description}</p>
-            </div>
+        </div>
+      </div>
+      <div class="card__footer">
+      
+        <div class="action">
+        <Link to={"/cart"}><button type="button" disabled={product.stock === 0} 
+                    onClick={buyProductHandler}>Buy Now</button></Link>
+          <button type="button" disabled={product.stock === 0} 
+                    onClick={addToCartHandler}>Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </main>
             <div className="reviewButton">
               <button className="Review" onClick={submitReviewToggle}>
                 Review this product
@@ -220,7 +202,7 @@ const ProductDetails = () => {
                 </DialogActions>
               </Dialog>
             </div>
-          </div>
+          
           <div className="ReviewSection">
             <h3 className="reviewHead">Ratings & Reviews</h3>
 
@@ -235,6 +217,16 @@ const ProductDetails = () => {
               <p className="noReviews">No Reviews in this Product</p>
             )}
           </div>
+
+
+
+
+
+
+
+
+
+
         </Fragment>
       )}
     </Fragment>

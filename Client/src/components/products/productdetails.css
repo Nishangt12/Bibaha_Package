@@ -1,227 +1,4 @@
-.ProductDetails {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-}
 
-.ProductDetails > div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 4vmax;
-  box-sizing: border-box;
-}
-
-.ProductDetails > div:last-child {
-  align-items: flex-start;
-}
-
-.ImageCro {
-  width: 400px;
-  height: 400px;
-  margin-left: 20%;
-  object-fit: cover;
-}
-
-.outstock {
-  color: red;
-}
-
-.lowstock {
-  color: rgb(246, 102, 102);
-}
-
-.instock {
-  color: rgb(57, 176, 57);
-}
-
-.block1 {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.block1 h2 {
-  display: flex;
-
-  margin-right: 34vmax;
-  margin-bottom: 20px;
-}
-
-.block2 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.block2-span {
-  margin-left: 10px;
-  font-size: 1.2rem;
-  color: #555;
-}
-
-.block3 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.block31 {
-  display: flex;
-  margin-top: 10px;
-}
-
-.block31 button {
-  border: none;
-  padding: 8px 70px;
-  margin-right: 10px;
-  color: #fff;
-  background-color: #007bff;
-  border-radius: 7px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  flex: 2;
-}
-
-.block31 button:last-child {
-  margin-left: 2%;
-}
-
-.block31 button:hover {
-  background-color: #0056b3;
-}
-
-.block4 {
-  margin-bottom: 20px;
-  padding: 10px;
-}
-
-.block4 h3 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #000000;
-}
-
-.block4 p {
-  font-size: 1.2rem;
-  line-height: 0.5;
-}
-
-.delivery {
-  display: flex;
-  flex-direction: column;
-  background-color: #fcfcfc;
-  padding: 20px;
-  margin: 20px;
-}
-
-.delivery h3 {
-  margin: 10px 0;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: start;
-}
-
-.standardDelivery {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.standardDelivery p {
-  margin: 0;
-}
-
-.deliveryInfo {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-}
-
-.deliveryType {
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 5px;
-}
-
-.deliveryTime {
-  font-size: 14px;
-  color: gray;
-  margin-bottom: 5px;
-}
-
-.deliveryPrice {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  color: green;
-}
-
-.cashDelivery {
-  font-size: 16px;
-  font-weight: bold;
-  border-top: 1px solid rgb(222, 221, 221);
-  padding: 20px;
-}
-
-.reviewButton {
-  padding: 10px;
-}
-
-.Review {
-  border: none;
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #007bff;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.Review:hover {
-  background-color: #0056b3;
-}
-
-.submitDialog {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.submitDialogTextArea {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 1rem 0;
-  padding: 1rem;
-  font: 300 1rem 'Roboto';
-  outline: none;
-  resize: vertical;
-  min-height: 6rem;
-}
-
-.submitDialog button {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.submitDialog button:first-child {
-  background-color: #ccc;
-  color: #333;
-}
-
-.submitDialog button:last-child {
-  background-color: #00bcd4;
-  color: #fff;
-}
 
 .Desc {
   width: 100%;
@@ -252,57 +29,6 @@
   margin-top: 30px;
   color: gray;
 }
-
-@media screen and (max-width: 600px) {
-  .ProductDetails {
-    flex-direction: column;
-    height: unset;
-  }
-  .ImageCro {
-    margin-left: -50px;
-  }
-
-  .ProductDetails > div:last-child {
-    align-items: center;
-  }
-
-  .block1 > h2 {
-    font-size: 3vmax;
-    text-align: center;
-    margin-left: 17vmax;
-  }
-
-  .block2 {
-    justify-content: center;
-  }
-  .block2 > span {
-    font-size: 2.5vmax;
-  }
-
-  .block3 > h1 {
-    font: 700 3vmax 'Franklin Gothic Medium';
-    text-align: center;
-    margin-left: 8vmax;
-  }
-
-  .block31 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .block31 > button {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-
-  .block3 > p {
-    padding: 2.5vmax 0;
-    margin-left: 0.5vmax;
-    font: 400 2vmax;
-  }
-
   .block4 {
     padding: 0 2vmax;
     font: 500 2.5vmax;
@@ -316,10 +42,276 @@
 
   .Review {
     font-size: 20px;
-    height: 6vmax;
+    height: 3vmax;
+    padding: 10px;
   }
 
   .reviewHead {
     font-size: 15px;
   }
+
+  .reviewButton {
+    padding: 10px;
+  }
+  
+  .Review {
+    border: none;
+    color: #fff;
+    background-color: orange;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Review:hover {
+    background-color: rgb(173, 114, 5);
+  }
+
+  .submitDialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .submitDialogTextArea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 1rem 0;
+    padding: 1rem;
+    font: 300 1rem 'Roboto';
+    outline: none;
+    resize: vertical;
+    min-height: 6rem;
+  }
+  
+  .submitDialog button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .submitDialog button:first-child {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .submitDialog button:last-child {
+    background-color: #00bcd4;
+    color: #fff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+/* Styling for main content */
+main{
+  max-width: 800px;
+  margin: 5% auto;
+}
+
+/* Styling for cards */
+.card {
+  box-shadow: 0 6px 6px rgba(#000, 0.3);
+  transition: 200ms;
+  background: #fff;
+}
+
+/* Styling for card title */
+.card__title {
+  display: flex;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+.card__title h3 {
+  flex: 0 1 200px;
+  text-align: right;
+  margin: 0;
+  color: #252525;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/* Styling for card icon */
+.card__title .icon {
+  flex: 1 0 8px;
+  background:orange;
+  color: #fff;
+  padding: 1px 1px;
+  transition: 200ms;
+}
+
+.card__title .icon > a {
+  color: #fff;
+}
+
+.card__title .icon:hover {
+  background: #252525;
+}
+
+/* Styling for card body */
+.card__body {
+  padding: 0 40px;
+  display: flex;
+  flex-flow: row no-wrap;
+  margin-bottom: 25px;
+}
+
+.card__body > .half {
+  box-sizing: border-box;
+  padding: 0 15px;
+  flex: 1 0 50%;
+}
+
+/* Styling for featured text */
+.featured_text h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+  line-height: 50px;
+  color: #181e28;
+}
+
+.featured_text p.sub {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: #686e77;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.featured_text p.price {
+  font-family: "Fjalla One", sans-serif;
+  color: #252525;
+  font-size: 26px;
+}
+
+/* Styling for image */
+.image {
+  padding-top: 15px;
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+
+.image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styling for description */
+.description p {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 16px;
+  color: #555;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Styling for stock */
+span.stock {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #a1cc16;
+}
+
+/* Styling for reviews */
+.reviews .stars {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+}
+
+.reviews .stars > li {
+  display: inline-block;
+}
+
+.reviews .stars .fa {
+  color: #f7c01b;
+}
+
+.reviews > span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin-left: 5px;
+  color: #555;
+}
+
+/* Styling for card footer */
+.card__footer {
+  padding: 30px 40px;
+  display: flex;
+  flex-flow: row no-wrap;
+  align-items: center;
+  position: relative;
+}
+
+.card__footer::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 40px;
+  width: calc(100% - 40px);
+  height: 3px;
+  background: #d8a011;
+  background: linear-gradient(to right, #ec9305 0%, #d76902 20%, #ddd 20%, #ddd 100%);
+}
+
+.card__footer .recommend {
+  flex: 1 0 10px;
+}
+
+.card__footer .recommend p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+}
+
+.card__footer .recommend h3 {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #115dd8;
+}
+
+.card__footer .action button {
+  cursor: pointer;
+  border: 1px solid #d8a611;
+  padding: 14px 30px;
+  margin: 10px;
+  border-radius: 200px;
+  color: #fff;
+  background: #ff9900;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  transition: 200ms;
+}
+
+.card__footer .action button:hover {
+  background: #fff;
+  color:black;
 }

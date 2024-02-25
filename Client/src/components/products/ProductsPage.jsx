@@ -46,7 +46,7 @@ export const ProductsPage = () => {
       ) : (
         <Fragment>
           <div className="wrapper"></div>
-          <h2 className="productsHeading">Products</h2>
+          
           <div className="productContainer">
             {products &&
               products.map((product) => (
@@ -119,7 +119,7 @@ export const ProductsPage = () => {
             </ul>
 
   </Link>
-  <Link>
+  {/* <Link>
   <h1>Rating Above</h1>
   <Rating
               value={ratings}
@@ -128,7 +128,7 @@ export const ProductsPage = () => {
               }}
               precision={0.5}
             />
-  </Link>
+  </Link> */}
  
 </aside>
           {resPerPage < productsCount && (

@@ -48,21 +48,21 @@ const OrderDetails = () => {
       <div className="orderContainer">
         <div>
           <div className="userShippingDetails">
-            <h1>{user?.firstName}'s Shipping Details</h1>
+            <h1> Shipping Details</h1>
             <div className="shippingDetailsBox">
               <div>
-                <p>Name: </p>
+              
                 <span>{fullName}</span>
               </div>
               <div>
-                <p>Contact: </p>
+               
                 <span>{shippingDetails.contact}</span>
               </div>
               <div>
-                <p>Address: </p>
-                <span>{fullAddress}</span>
-                <Link to="/shipping" style={{ textDecoration: 'none' }}>
-                  <button>Edit</button>
+             
+                <span>{fullAddress} ,Nepal</span>
+                <Link to="/shipping" className='edit'>
+                  Edit
                 </Link>
               </div>
             </div>
@@ -93,10 +93,10 @@ const OrderDetails = () => {
           <div className="wholeSummary">
             <h1>Order Summary</h1>
             <div className="wholeSummaryBox">
-              <div>
+              {/* <div>
                 <p>Total Units:</p>
                 <span>{units}</span>
-              </div>
+              </div> */}
               <div>
                 <p>Total: </p>
                 <span>Rs. {allTotal}</span>

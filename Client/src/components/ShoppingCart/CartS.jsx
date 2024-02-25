@@ -125,6 +125,8 @@ export const CartS = () => {
               </div>
             </div>
           </div>
+
+
         </Fragment>
       )}
     </Fragment>

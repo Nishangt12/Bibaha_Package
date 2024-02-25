@@ -1,9 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import Productcard from '../../products/Productcard';
 import { useParams,Link } from 'react-router-dom';
+import { getProduct } from '../../../reduxFeature/actions/productAction';
 import Slider from '@material-ui/core/Slider';
 import Rating from '@mui/material/Rating';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import axios from 'axios';
 import "./search.css"
 
@@ -11,9 +12,10 @@ const SearchFilter = () => {
   const params = useParams();
   const keyword = params.search;
   const [productList, setProductList] = useState();
-  const [price, setPrice] = useState([0, 2000]);
+  const [price, setPrice] = useState([0, 100]);
   const [category, setCategory] = useState('');
   const [ratings, setRatings] = useState(0);
+  const dispatch = useDispatch();
 
   const priceHandler = (e, newPrice) => {
     e.preventDefault();
@@ -37,65 +39,18 @@ const SearchFilter = () => {
     };
     getSearch();
   }, [keyword]);
+  useEffect(() => {
+    dispatch(getProduct(keyword, price, category, ratings));
+  }, [dispatch, keyword, price,  category, ratings]);
+
 
   return (
-    // <Fragment>
-    //   <div>
-    //     <h2 className="productsHeading">Products</h2>
-    //     <div className="filterBox">
-    //       <h3>Price</h3>
-    //       <Slider
-    //         value={price}
-    //         onChange={priceHandler}
-    //         valueLabelDisplay="auto"
-    //         aria-labelledby="range-slider"
-    //         min={0}
-    //         max={2000}
-    //       />
-    //       <h3>Categories</h3>
-    //       <ul className="categoryfilter">
-    //         {categories &&
-    //           categories.map((category) => (
-    //             <li
-    //               className="category-li "
-    //               key={category.title}
-    //               onClick={() => setCategory(category)}
-    //             >
-    //               {category.title}
-    //             </li>
-    //           ))}
-    //       </ul>
-
-    //       <h3 component="legend">Ratings Above</h3>
-    //       <Rating
-    //         value={ratings}
-    //         onChange={(e, newRating) => {
-    //           setRatings(newRating);
-    //         }}
-    //         precision={0.5}
-    //       />
-    //     </div>
-    //     <div
-    //       style={{
-    //         display: 'flex',
-    //         flexWrap: 'wrap',
-    //         padding: '0 5vmax',
-    //         justifyContent: 'center',
-    //         minHeight: '30vh',
-    //       }}
-    //     >
-    //       {productList &&
-    //         productList.map((product) => (
-    //           <Productcard key={product._id} product={product} />
-    //         ))}
-    //     </div>
-    //   </div>
-    // </Fragment>
+ 
     
       
         <Fragment>
           <div className="wrapper"></div>
-          <h2 className="productsHeading">Products</h2>
+          <h2 className="productsHeading">Product</h2>
           <div className="productContainer">
             {productList &&
               productList.map((product) => (

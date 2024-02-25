@@ -49,14 +49,16 @@ const Shipping = () => {
 
   return (
     <Fragment>
-      <MultiSteps activeStep={0} />
-      <div className="shippingContainer">
-        <div className="shippingDetails">
-          <div className="shippingBox">
-            <h2>Shipping Details</h2>
-            <form className="shippingForm" onSubmit={handleShippingSubmit}>
-              <div className="shippingAddress">
-                <FaceIcon />
+   
+      <div class="container">
+        <h1>Shipping</h1>
+        <p>Please enter your shipping details.</p>
+        <form  onSubmit={handleShippingSubmit}>
+        <div class="form" >
+          
+        <label class="field">
+            <span class="field__label" for="address">Name</span>
+          
                 <input
                   type="text"
                   placeholder="Name"
@@ -64,33 +66,40 @@ const Shipping = () => {
                   readOnly
                   onChange={(e) => setFirstName(e.target.value)}
                 />
-              </div>
-
-              <div className="shhpingAddress">
-                <SmartphoneIcon />
-                <input
+          </label>
+          <label class="field">
+            <span class="field__label" for="address">Contact</span>
+            <input
                   type="number"
                   placeholder="Contact"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
                   size="10"
                 />
-              </div>
-
-              <div className="shippingAddress">
-                <LocationCity />
-                <input
+          </label>
+          <label class="field">
+            <span class="field__label" for="address">Province</span>
+            <input
                   type="text"
                   placeholder="Province"
                   value={province}
                   onChange={(e) => SetProvince(e.target.value)}
                   readOnly
                 />
-              </div>
-
-              <div className="shhpingAddress">
-                <LocationCity />
-                <select
+          </label>
+          <label class="field">
+            <span class="field__label" for="address">Address</span>
+            <input
+                  type="text"
+                  placeholder="Address"
+                  required
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+          </label>
+          <label class="field">
+            <span class="field__label" for="country">City</span>
+            <select
                   required
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
@@ -100,27 +109,13 @@ const Shipping = () => {
                   <option value="Lalitpur">Lalitpur</option>
                   <option value="Bhaktapur">Bhaktapur</option>
                 </select>
-              </div>
-
-              <div className="shhpingAddress">
-                <PlaceIcon />
-                <input
-                  type="text"
-                  placeholder="Address"
-                  required
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                />
-              </div>
-
-              <input
-                type="submit"
-                value="Next"
-                className="ShippingAddressBtn"
-              />
-            </form>
-          </div>
+          </label>
+          <button class="button" type="submit"
+                >Continue</button>
+               
         </div>
+       
+        </form>
       </div>
     </Fragment>
   );

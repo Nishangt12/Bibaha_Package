@@ -2,6 +2,8 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Login from './components/User/Login';
 import Signup from './components/User/Signup';
+import Contact from "./components/User/contact/Contact";
+
 import ForgotPassword from './components/User/ForgotPassword/index';
 import Home from './components/Home';
 import Footer from './components/Footer';
@@ -55,6 +57,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/signup" exact element={<Signup />} />
         <Route path="/login" exact element={<Login />} />
+        <Route path="/contact" exact element={<Contact/>} />
+       
         <Route path="/forgot/password" element={<ForgotPassword />} />
         <Route path="/password/reset/:token" element={<ResetPassword />} />
         <Route path="/" exact element={<Navigate replace to="/home" />} />

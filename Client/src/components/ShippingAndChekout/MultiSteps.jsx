@@ -55,7 +55,7 @@ const MultiSteps = ({ activeStep }) => {
             >
               <StepLabel
                 className={classes.label}
-                style={{ color: activeStep >= j ? 'blue' : 'black' }}
+                style={{ color: activeStep >= j ? 'orange' : 'grey' }}
                 icon={i.icon}
               >
                 {i.label}

@@ -10,8 +10,8 @@ const Success = () => {
       {' '}
       <MultiSteps activeStep={2} />
       <div className="successOrder">
-        <CheckCircleIcon />
-        <p>Your order has been placed successfully</p>
+        <CheckCircleIcon /> 
+        <p>Your order has been placed successfully and Invoice has been sent to your mail</p>
         <Link to="/myorder" style={{ textDecoration: 'none' }}>
           <button>View Orders</button>
         </Link>

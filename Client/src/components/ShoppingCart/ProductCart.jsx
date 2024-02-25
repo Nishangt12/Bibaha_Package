@@ -24,20 +24,3 @@ const ProductCart = ({ item, deleteCartItems }) => {
 };
 
 export default ProductCart;
-
-{
-  /* <div className="priceDetails">
-        <div className="productAmount">
-          <button onClick={() => decreaseQuantity(item.product, item.quantity)}>
-            -
-          </button>
-          <input className="productAmount" type="number" readOnly />
-          <button
-            onClick={() =>
-              increaseQuantity(item.product, item.quantity, item.stock)
-            }
-          >
-            +
-          </button>
-        </div> */
-}

@@ -10,13 +10,18 @@
 }
 
 .heading {
-  font: 400 2rem;
+  font-weight: 700;
   padding: 0.5vmax;
+  border-bottom: 1px solid black;
+  font-size: x-large;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: rgba(0, 0, 0, 0.637);
   transition: all 0.5s;
-  margin: 2rem;
-  text-align: start;
+
+
 }
 
 .productcontainer > a {

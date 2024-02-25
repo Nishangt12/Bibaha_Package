@@ -69,7 +69,7 @@ const Signup = () => {
       alert.error('Phone Number should be 10 digits Long');
       return;
     }
-
+    alert.success("Verification mail sent")
     dispatch(register(form));
     resetFormData();
     
@@ -113,7 +113,7 @@ const Signup = () => {
     }
     console.log(success);
     if (success) {
-      alert.success(success);
+      alert.success("Email sent");
      
     }
   }, [dispatch, error, alert, success]);

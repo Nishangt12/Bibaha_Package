@@ -3,20 +3,17 @@ import img1 from "../imgs/3.jpg"
 import img2 from "../imgs/1.jpg"
 import img3 from "../imgs/2.jpg"
 
-import { Box, Container } from '@mui/material';
-import Promotions from './mainPage/HomePage/Promotions';
+
+
 import Products from './products/Productcard';
-import Category from './mainPage/HomePage/Category';
+
 import { getProductsHome } from '../reduxFeature/actions/productAction';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useAlert } from 'react-alert';
-import { styled } from '@mui/system';
+
 import { Link } from 'react-router-dom';
 import Loader from './mainPage/FrontFeatures/Loading/Loader';
-const StyledContainer = styled(Container)`
-  width: 100%;
-`;
 
 const Home = () => {
   const alert = useAlert();
@@ -34,7 +31,7 @@ const Home = () => {
 
   //styles
   const styles = {
-    container: {
+    containers: {
       display: 'flex',
       margin: '3vmax auto',
       width: '80vw',
@@ -42,8 +39,8 @@ const Home = () => {
       justifyContent: 'center',
       maxWidth: '100%',
     },
-
-    H1: {
+  
+    hh: {
       textAlign: 'center',
       fontFamily: 'Roboto',
       fontSize: '3vmax',
@@ -53,8 +50,9 @@ const Home = () => {
       margin: '5vmax auto',
       color: 'black',
       marginTop: '10px',
-      marginBottom: '20px',
+     
     },
+  
     button: {
       display: 'flex',
       justifyContent: 'center',
@@ -70,6 +68,7 @@ const Home = () => {
       margin: '0 auto',
       marginBottom: '10px',
     },
+  
     categoryContainer: {
       display: 'flex',
       flexWrap: 'wrap',
@@ -79,6 +78,7 @@ const Home = () => {
       maxWidth: '1200px',
     },
   };
+  
   return (
   <>
   {loading ? (
@@ -87,7 +87,7 @@ const Home = () => {
         <>
       <section className="text-gray-600 body-font bg-gray-50 mb-4">
         
-  <div className="container px-5 py-16 mx-auto flex flex-wrap">
+  <div className="containers px-5 py-16 mx-auto flex flex-wrap">
   <div className="flex flex-col text-center w-full mb-5">
       <h1 className="sm:text-3xl text-2xl font-bold title-font mb-4 text-orange-500">Plan Your Wedding Here</h1>
       <p className="lg:w-2/3 mx-auto leading-relaxed italic font-semibold">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
@@ -137,10 +137,10 @@ const Home = () => {
   </div>
 </section>
 <section>
-          <h1 className="h1" style={styles.H1}>
+          <h1 className="hh" style={styles.hh}>
             Feautred Products
           </h1>
-          <div className="container" id="container" style={styles.container}>
+          <div className="containers" id="containers" style={styles.containers}>
             {products &&
               products.map((product) => (
                 <Products product={product} key={product._id} />

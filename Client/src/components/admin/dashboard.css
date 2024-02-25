@@ -2,6 +2,7 @@
 .dashboard {
   width: 100vw;
   max-width: 100%;
+  margin-bottom: 5vmax;
   display: grid;
   grid-template-columns: 1fr 5fr;
 }
@@ -15,6 +16,7 @@
   color: rgba(0, 0, 0, 0.733);
   background-color: #f7f7f8;
   font: 300 2rem 'Roboto', sans-serif;
+  display: flex;
   text-align: start;
   width: 50%;
   padding: 1rem;
@@ -42,6 +44,8 @@
   color: rgb(0, 0, 0);
   font: 400 1.5rem 'Roboto', sans-serif;
   background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
   text-decoration: none;
   padding: 1rem;
   width: 30vmax;
@@ -56,13 +60,17 @@
 }
 
 .dash-2 > a:first-child {
-  background-color: rgb(3, 3, 3);
+  background-color: rgb(255, 166, 0);
   color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .dash-2 > a:last-child {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 166, 0);
   color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
 }
 .dash-2 > a:hover {
   transform: translateY(-0.25rem);

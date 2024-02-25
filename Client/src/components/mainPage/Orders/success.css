@@ -19,7 +19,7 @@
 }
 
 .successOrder button {
-  background-color: #4caf50;
+  background-color: orange;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -40,6 +40,6 @@
 .successOrder svg {
   width: 80px;
   height: 80px;
-  fill: #4caf50;
+  fill: orange;
   margin-bottom: 20px;
 }

@@ -49,7 +49,7 @@
   display: block;
   margin-bottom: 20px;
   /* margin: 30px auto; */
-  background-color: #1976d2;
+  background-color:orange;
   color: #fff;
   border: none;
   outline: none;
@@ -61,5 +61,5 @@
 }
 
 .green_btn:hover {
-  background-color: #1565c0;
+  background-color:orange;
 }

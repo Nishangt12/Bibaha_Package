@@ -35,7 +35,7 @@ const Login = () => {
       alert.success('Login Successfull');
       navigate('/home');
     }
-  }, [error, isAuthenticated]);
+  }, [error, isAuthenticated,alert,dispatch,navigate]);
 
   const queryParams = new URLSearchParams(location.search);
   const verified = queryParams.get('verified');

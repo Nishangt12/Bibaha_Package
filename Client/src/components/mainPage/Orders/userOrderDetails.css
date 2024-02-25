@@ -1,4 +1,4 @@
-/* Styles for Order Details page */
+
 
 .userOrderDetailsPage {
   background-color: #f2f2f2;
@@ -39,7 +39,7 @@
 
 .userOrderDetailsBox div {
   display: flex;
-  align-items: center; /* add this */
+  align-items: center;
   margin: 1.5rem 0;
 }
 
@@ -186,3 +186,6 @@
     margin-bottom: 0.5rem;
   }
 }
+
+
+ 

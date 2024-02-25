@@ -173,8 +173,8 @@ const Navbar = () => {
             )}
           </IconButton> */}
           <Link to="/allProducts"> Product </Link>
-          <Link to="/"> About Us </Link>
-          <Link to="/"> Contact Us </Link>
+        
+          <Link to="/contact"> Contact Us </Link>
           <Link to="/cart" style={{ textDecoration: 'none' }}>
             <Badge badgeContent={`${cartItems.length}`} color="warning" >
               <ShoppingCart sx={{ fontSize: '25px' }} />

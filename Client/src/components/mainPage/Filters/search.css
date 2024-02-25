@@ -6,6 +6,7 @@
     color: rgba(0, 0, 0, 0.678);
     font: 500 1.5vmax 'Roboto';
     text-align: center;
+   
   }
   .productContainer {
     display: flex;
@@ -15,6 +16,7 @@
     min-height: 30vh;
     margin-left: 10vmax;
     margin-bottom: 10vmax;
+    margin-top: 5vmax;
   }
 
   .page-item {

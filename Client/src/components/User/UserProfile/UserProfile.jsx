@@ -83,7 +83,8 @@ const UserProfile = () => {
 
                 <h5>{fullName}</h5>
                 <h5>{user.email}</h5>
-                <Link to="/update/profile" style={{ textDecoration: 'none' }}>
+                <br/>
+                <Link to="/update/profile" style={{ textDecoration: 'none'}}>
                   <button>Edit</button>
                 </Link>
               </div>

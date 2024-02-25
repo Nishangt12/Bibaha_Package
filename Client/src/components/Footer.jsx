@@ -165,7 +165,7 @@ const Footer = () => {
                       href="#"
                       className="text-wh transition hover:opacity-75"
                     >
-                      Heavy mala 
+                      Rajanigandha 
                     </a>
                   </li>
                 </ul>
@@ -214,7 +214,7 @@ const Footer = () => {
 
                   <li>
                     <a
-                      href="#"
+                     
                       className="text-wh transition hover:opacity-75"
                     >
                       Chat
@@ -231,30 +231,14 @@ const Footer = () => {
                 <ul className="space-y-4 text-sm font-semibold">
                   <li>
                     <a
-                      href="#"
+                      href="https://www.freeprivacypolicy.com/live/8c1bf650-219f-4dca-86cd-e49e9b5466a4"
                       className="text-wh transition hover:opacity-75"
                     >
-                      Terms&Conditions
+                      Privacy policy
                     </a>
                   </li>
 
-                  <li>
-                    <a
-                      href="#"
-                      className="text-wh transition hover:opacity-75"
-                    >
-                      Returns Policy
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      href="#"
-                      className="text-wh transition hover:opacity-75"
-                    >
-                      Refund Policy
-                    </a>
-                  </li>
+                 
                 </ul>
               </nav>
             </div>
@@ -262,7 +246,7 @@ const Footer = () => {
         </div>
 
         <p className="text-xs text-black font-semibold">
-          &copy; 2022. Company Name. All rights reserved.
+          &copy; 2023. Bibaha Package. All rights reserved.
         </p>
       </div>
     </footer>
